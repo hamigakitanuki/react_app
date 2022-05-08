@@ -1,0 +1,23 @@
+type Task {
+  id: ID!
+  title: String!
+  note: String!
+  completed: Int!
+  created_at: String!
+  updated_at: String!
+}
+
+input NewTask {
+  title: String!
+  note: String!
+}
+
+type Mutation {
+  createTask(input: NewTask!): Task!
+}
+
+# ここから追記
+type Query {
+  tasks: [Task!]!
+}
+# ここまで追記
